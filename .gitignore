@@ -97,5 +97,7 @@ fabric.properties
 .history/
 
 .data/
+data/
 .private/
+private/
 # End of https://mrkandreev.name/snippets/gitignore-generator/#venv,PyCharm,VisualStudioCode

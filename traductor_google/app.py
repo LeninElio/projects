@@ -1,5 +1,12 @@
+import os
 import time
 from google.cloud import translate_v3beta1 as translate
+from dotenv import load_dotenv
+
+
+load_dotenv('private/.env')
+PROJECT_ID = os.getenv('PROJECT_ID')
+
 
 def traducir_documento(
         project_id: str,
@@ -39,13 +46,12 @@ def traducir_documento(
 
 
 if __name__ == '__main__':
-    PROJECT_ID = 'traductorapi-393015'
     for i in range(1, 27):
         NOMBRE = f'parte{i}'
         PATH = f'./data/{NOMBRE}.pdf'
         traducir_documento(PROJECT_ID, PATH, NOMBRE)
         print('-' * 30)
         print(f'{i}.- Archivo {NOMBRE} traducido.')
-        print('--> Espera de 5 segundos.')
+        print('==> Espera de 5 segundos.')
         print('-' * 30)
         time.sleep(5)

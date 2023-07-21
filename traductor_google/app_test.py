@@ -1,14 +1,17 @@
+import os
 from google.cloud import translate
+from dotenv import load_dotenv
+
+
+load_dotenv('private/.env')
+PROJECT_ID = os.getenv('PROJECT_ID')
+
 
 def traducir(texto):
     """Traduce un texto a un idioma dado.
     """
-    # archivo = '../private/traductorapi.json'
-    # os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = archivo
-    # $env:GOOGLE_APPLICATION_CREDENTIALS="D:\Proyectos\projects\private\traductorapi.json"
-
     cliente = translate.TranslationServiceClient()
-    parent = "projects/traductorapi-393015/locations/global"
+    parent = f"projects/{PROJECT_ID}/locations/global"
 
     response = cliente.translate_text(
         request={

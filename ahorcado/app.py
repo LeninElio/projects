@@ -9,7 +9,7 @@ def limpiar_consola():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def juego_ahorcado(palabra):
+def juego_ahorcado(palabra, nivel=1):
     """
     Programando el juego del ahorcado.
     """
@@ -22,24 +22,24 @@ def juego_ahorcado(palabra):
     ingresados = set()
 
     while True:
-        letra = str(input('Ingresa una letra: '))
+        letra = str(input('Ingresa una letra: ')).lower()
 
-        if letra.lower() == 'aa':
-            print('Asi que has elegido el camino de la rendición.')
+        if letra == 'salir':
+            print('Así que has elegido el camino de la rendición.')
             break
 
-        if letra.lower() in ingresados:
+        if letra in ingresados and nivel == 1:
             print('Ya has usado esa letra.')
             continue
 
-        ingresados.add(letra.lower())
-        if letra.lower() in palabra:
+        if letra in palabra and letra not in ingresados:
             for i, _ in enumerate(palabra):
-                if palabra[i] == letra.lower():
+                if palabra[i] == letra:
                     tamano_palabra[i] = letra.upper()
         else:
             errores += 1
 
+        ingresados.add(letra)
         palabla_actual = ''.join(tamano_palabra)
         print(palabla_actual)
         print(imprime.grafico[errores])
@@ -54,5 +54,5 @@ def juego_ahorcado(palabra):
             break
 
 
-PALABRA = str(input('Ingresa la palabra secreta: '))
-juego_ahorcado(PALABRA)
+PALABRA = str(input('Ingresa la palabra secreta: ')).lower()
+juego_ahorcado(PALABRA, 2)

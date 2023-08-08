@@ -20,6 +20,4 @@ with open('./data/texto.txt', 'r', encoding='utf-8') as archivo:
     for palabra in cantidad.split():
         contador_palabra[palabra] += 1
 
-    print(contador_palabra)
-
-    print(texto)
+    print(dict(contador_palabra))

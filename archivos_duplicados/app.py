@@ -46,6 +46,7 @@ def buscar_duplicados(carpeta):
                 if filecmp.cmp(archivos[i], archivos[j]):
                     eliminar.append(archivos[j])
 
+    print(archivos_por_extension)
     return set(eliminar)
 
 
@@ -59,7 +60,7 @@ def eliminar_duplicados(eliminar):
 
 
 
-CARPETA = "./data/duplicado/"
-# print(revisar_carpeta(CARPETA))
-print(buscar_duplicados(CARPETA))
+CARPETA = r"./data/duplicado/"
+print(revisar_carpeta(CARPETA))
+# print(buscar_duplicados(CARPETA))
 # print(eliminar_duplicados(buscar_duplicados(CARPETA)))

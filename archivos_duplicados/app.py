@@ -61,6 +61,6 @@ def eliminar_duplicados(eliminar):
 
 
 CARPETA = r"./data/duplicado/"
-print(revisar_carpeta(CARPETA))
-# print(buscar_duplicados(CARPETA))
+# print(revisar_carpeta(CARPETA))
+print(buscar_duplicados(CARPETA))
 # print(eliminar_duplicados(buscar_duplicados(CARPETA)))

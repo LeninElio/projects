@@ -17,4 +17,4 @@ def hacer_clic_en_posicion(posicion_x, posicion_y, num_clics):
     print('Hecho...!')
 
 
-hacer_clic_en_posicion(777, 595, 30)
+hacer_clic_en_posicion(777, 595, 1010)
